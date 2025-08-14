@@ -1,103 +1,258 @@
-import Image from "next/image";
 
-export default function Home() {
+'use client';
+
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import FeaturesSection from '@/components/Features/FeaturesSection';
+import TestimonialsSection from '@/components/Testimonials/TestimonialsSection';
+import CtaSection from '@/components/Cta/CtaSection';
+
+
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-[#F9FAFB] to-[#22C475]/5">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-8rem)]">
+            
+            {/* Left Side - Welcome Message */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-left lg:pr-8 order-1 lg:order-1"
+            >
+              {/* Main Headline */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#14110B] leading-tight mb-6"
+              >
+                Empower Your{' '}
+                <span className="text-[#22C475] relative">
+                  Finances
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: '100%' }}
+                    transition={{ duration: 0.8, delay: 1.2 }}
+                    className="absolute -bottom-2 left-0 h-1 bg-[#22C475] rounded-full"
+                  />
+                </span>
+                . Save Smarter, Together.
+              </motion.h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-lg sm:text-xl text-[#14110B]/80 leading-relaxed mb-8 max-w-2xl"
+              >
+                Savenest helps you build financial stability through group savings, 
+                personal coaching, and simple tools — right from your phone.
+              </motion.p>
+
+              {/* Sub-headline */}
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-base sm:text-lg text-[#14110B]/70 leading-relaxed mb-10 max-w-xl font-medium"
+              >
+                Start saving with purpose. Grow with your community. 
+                Gain control of your money — one goal at a time.
+              </motion.p>
+
+              {/* Get Started Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="lg:hidden xl:block"
+              >
+                <Link
+                  href="/login"
+                  className="inline-flex items-center px-8 py-4 bg-[#22C475] text-[#F9FAFB] font-semibold text-lg rounded-xl hover:bg-[#4BC589] active:bg-[#179055] transform hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg hover:shadow-xl group"
+                >
+                  Get Started
+                  <motion.div
+                    className="ml-3"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ 
+                      duration: 1.5, 
+                      repeat: Infinity, 
+                      repeatType: "reverse",
+                      ease: "easeInOut" 
+                    }}
+                  >
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+                  </motion.div>
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Side - Mascot Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="relative order-2 lg:order-2 flex justify-center lg:justify-end"
+            >
+              {/* Background decoration */}
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="absolute inset-0 bg-gradient-to-br from-[#22C475]/20 to-[#4BC589]/20 rounded-full filter blur-3xl transform scale-75"
+              />
+              
+              {/* Floating elements */}
+              <motion.div
+                animate={{ 
+                  y: [-20, 20, -20],
+                  rotate: [0, 5, 0, -5, 0] 
+                }}
+                transition={{ 
+                  duration: 6, 
+                  repeat: Infinity, 
+                  repeatType: "reverse",
+                  ease: "easeInOut" 
+                }}
+                className="absolute top-10 left-10 w-6 h-6 bg-[#22C475] rounded-full opacity-60"
+              />
+              
+              <motion.div
+                animate={{ 
+                  y: [20, -20, 20],
+                  rotate: [0, -5, 0, 5, 0] 
+                }}
+                transition={{ 
+                  duration: 4, 
+                  repeat: Infinity, 
+                  repeatType: "reverse",
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+                className="absolute bottom-20 right-10 w-4 h-4 bg-[#4BC589] rounded-full opacity-60"
+              />
+
+              {/* Main mascot container */}
+              <motion.div
+                animate={{ 
+                  y: [-10, 10, -10],
+                  rotateY: [0, 5, 0, -5, 0] 
+                }}
+                transition={{ 
+                  duration: 4, 
+                  repeat: Infinity, 
+                  repeatType: "reverse",
+                  ease: "easeInOut" 
+                }}
+                className="relative z-10 max-w-md w-full"
+              >
+                {/* Placeholder for mascot image */}
+                <div className="relative w-full h-96 sm:h-[500px] lg:h-[600px] bg-gradient-to-br from-[#22C475]/10 to-[#4BC589]/20 
+                rounded-3xl border-2 border-[#22C475]/20 shadow-2xl flex items-center justify-center overflow-hidden">
+                  
+                  {/* Mascot placeholder content */}
+                  <div className="text-center">
+                    <motion.div
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ 
+                        duration: 2, 
+                        repeat: Infinity, 
+                        repeatType: "reverse" 
+                      }}
+                      className="text-8xl sm:text-9xl mb-4"
+                    >
+                      
+                    </motion.div>
+                    <div className="text-[#22C475] font-bold text-xl mb-2"></div>
+                    <img src="\images\macsot.png" className="text-[#14110B]/60 text-sm"/>
+                  </div>
+
+                  {/* Decorative elements inside the image container */}
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    className="absolute top-6 right-6 w-12 h-12 border-2 border-[#22C475]/30 rounded-full"
+                  />
+                  
+                  <motion.div
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                    className="absolute bottom-6 left-6 w-8 h-8 border-2 border-[#4BC589]/40 rounded-full"
+                  />
+                </div>
+              </motion.div>
+            </motion.div>
+
+          </div>
+
+          {/* Mobile Get Started Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="lg:hidden xl:hidden flex justify-center mt-8"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <Link
+              href="/login"
+              className="inline-flex items-center px-8 py-4 bg-[#22C475] text-[#F9FAFB] font-semibold text-lg rounded-xl hover:bg-[#4BC589] active:bg-[#179055] transform hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg hover:shadow-xl group"
+            >
+              Get Started
+              <motion.div
+                className="ml-3"
+                animate={{ x: [0, 5, 0] }}
+                transition={{ 
+                  duration: 1.5, 
+                  repeat: Infinity, 
+                  repeatType: "reverse",
+                  ease: "easeInOut" 
+                }}
+              >
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+              </motion.div>
+            </Link>
+          </motion.div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+
+        {/* Background pattern */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            animate={{ 
+              backgroundPosition: ['0% 0%', '100% 100%'],
+            }}
+            transition={{ 
+              duration: 20, 
+              repeat: Infinity, 
+              repeatType: "reverse" 
+            }}
+            className="absolute inset-0 opacity-5"
+            style={{
+              backgroundImage: `radial-gradient(circle at 25% 25%, #22C475 2px, transparent 2px),
+                               radial-gradient(circle at 75% 75%, #4BC589 1px, transparent 1px)`,
+              backgroundSize: '50px 50px'
+            }}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </section>
+       {/* Features Section */}
+      <FeaturesSection />
+
+       {/* Testimonials Section */}
+       <TestimonialsSection />
+
+       
+       {/* CTA Section */}
+       <CtaSection />
+       
+    
+    
     </div>
-  );
+  )
 }
