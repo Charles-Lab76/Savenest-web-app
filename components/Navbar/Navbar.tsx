@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
+
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +32,16 @@ const Navbar = () => {
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 rounded-lg flex items-center justify-center">
               {/* Placeholder for logo image */}
-              <img src="images\logo.png" className=''/>
+            
+              <Image src="/images/logo.png" 
+              alt='Logo'
+              width={100}
+              height={100} 
+              />
+
+        
+
+
             </div>
             <span className="text-[#14110B] font-bold text-xl font-inter">
               SAVE NEST

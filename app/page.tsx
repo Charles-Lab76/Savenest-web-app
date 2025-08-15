@@ -7,6 +7,7 @@ import { ArrowRight } from 'lucide-react';
 import FeaturesSection from '@/components/Features/FeaturesSection';
 import TestimonialsSection from '@/components/Testimonials/TestimonialsSection';
 import CtaSection from '@/components/Cta/CtaSection';
+import Image from 'next/image';
 
 
 
@@ -172,7 +173,12 @@ export default function HomePage() {
                       
                     </motion.div>
                     <div className="text-[#22C475] font-bold text-xl mb-2"></div>
-                    <img src="\images\macsot.png" className="text-[#14110B]/60 text-sm"/>
+                    <Image className='text-[#14110B]/60 text-sm' src="/images/macsot.png" 
+                    alt="Mascot" 
+                    width={500} 
+                    height={500} />
+                
+                    
                   </div>
 
                   {/* Decorative elements inside the image container */}

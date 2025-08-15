@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
-import { image, img } from 'framer-motion/client';
+//import { image, img } from 'framer-motion/client';
 import Image from 'next/image';
 
 const TestimonialsSection = () => {
@@ -14,7 +14,7 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       id: 1,
-      text: "With Savenest, I finally saved enough to launch my business, marking the beginning of a global voice. I never thought saving could be this easy.",
+      text: <p>&quot;With Savenest, I finally saved enough to launch my business, marking the beginning of a global voice. I never thought saving could be this easy.&quot;</p>,
       name: "Blessing A.",
       location: "Lagos",
       rating: 5,
@@ -23,7 +23,7 @@ const TestimonialsSection = () => {
     },
     {
       id: 2,
-      text: "I love the group savings. It's like having a circle of friends cheering me on!",
+      text: <p>&quot;With Savenest, I finally saved enough to launch my business, marking the beginning of a global voice. I never thought saving could be this easy.&quot;</p>,
       name: "Michael O.",
       location: "Ibadan",
       rating: 5,
@@ -31,7 +31,7 @@ const TestimonialsSection = () => {
     },
     {
       id: 3,
-      text: "With Savenest, I finally saved enough to launch my business, marking the beginning of a global voice. I never thought saving could be this easy.",
+      text: <p>&quot;With Savenest, I finally saved enough to launch my business, marking the beginning of a global voice. I never thought saving could be this easy.&quot;</p>,
       name: "Blessing A.",
       location: "Lagos",
       rating: 5,
@@ -178,7 +178,14 @@ const TestimonialsSection = () => {
                   >
                     <div className="relative">
                       {/* Image placeholder with gradient background */}
-                      <img src="/images/u1.jpg"/>
+
+                      <Image src="/images/u1.jpg"
+                       alt='rating'
+                       width={100}
+                       height={100}
+                       />
+
+
                       <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-[#22C475]
                        to-[#4BC589] rounded-full flex items-center justify-center text-white font-bold text-2xl lg:text-3xl shadow-lg">
                         {testimonials[currentIndex].name.charAt(0)}
@@ -218,7 +225,8 @@ const TestimonialsSection = () => {
                       transition={{ delay: 0.4, duration: 0.5 }}
                       className="text-lg sm:text-xl lg:text-2xl text-[#14110B] leading-relaxed mb-8 font-medium italic"
                     >
-                      "{testimonials[currentIndex].text}"
+                      &quot;{testimonials[currentIndex].text}&quot;
+
                     </motion.blockquote>
 
                     {/* Customer Info */}

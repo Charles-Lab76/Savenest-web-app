@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function CtaSection () {
   return (
@@ -50,8 +51,16 @@ export default function CtaSection () {
                       transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
                       className="text-8xl sm:text-9xl mb-4"
                     />
-                    <img src="\images\welcome.png" alt="Mascot" className="text-[#14110B]/60 text-sm" />
+                    <Image src="/images/welcome.png" 
+                    alt="Welcome" 
+                    width={500}
+                    height={500}
+                    className="text-[#14110B]/60 text-sm" />
                   </div>
+
+
+
+
 
                   <motion.div
                     animate={{ rotate: 360 }}
