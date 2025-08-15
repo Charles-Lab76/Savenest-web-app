@@ -6,7 +6,8 @@ const blogPage = () => {
         <h1>Blog</h1>
         <p>
             
-Savenest is a personal finance app built to help you take control of your money —smart saving at a time. Whether you're saving ₦200 or ₦20,000, we make it easy, secure, and rewarding — especially for people in communities often left behind traditional banks.
+Savenest is a personal finance app built to help you take control of your money —smart saving at a time. Whether youre saving ₦200 or ₦20,000, we make it easy, secure, 
+and rewarding — especially for people in communities often left behind traditional banks.
 
 
 Key Benefits
