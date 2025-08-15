@@ -1,6 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Variants } from 'framer-motion';
+
+
+
+
 import { 
   Users, 
   Brain, 
@@ -74,7 +79,7 @@ const FeaturesSection = () => {
     }
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { 
       opacity: 0, 
       y: 50,
@@ -93,7 +98,7 @@ const FeaturesSection = () => {
     }
   };
 
-  const hoverVariants = {
+  const hoverVariants: Variants = {
     hover: {
       y: -8,
       scale: 1.02,
@@ -163,7 +168,7 @@ const FeaturesSection = () => {
               className="group"
             >
               <motion.div
-                variants={hoverVariants}
+                variants = {hoverVariants}
                 className="bg-white rounded-2xl border border-[#1B1F3B]/10 p-6 lg:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col relative"
               >
                 {/* Icon */}

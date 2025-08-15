@@ -59,9 +59,6 @@ export default function CtaSection () {
                   </div>
 
 
-
-
-
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
